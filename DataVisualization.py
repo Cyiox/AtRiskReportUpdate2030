@@ -186,6 +186,7 @@ def sync_preserved_status_by_propertyID(
     update_all_sheets: bool = False
 ) -> None:
     """
+    
     Copies PRESERVED status from one sheet to other sheets for matching PropertyIDs.
     
     Args:
@@ -268,4 +269,3 @@ if __name__ == "__main__":
     )
     
     
-
