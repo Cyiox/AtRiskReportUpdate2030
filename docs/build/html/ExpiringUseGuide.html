@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Expiry use Database Update</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="DataVisualization Module" href="DataVisualization.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">2030 Expiring Use Forecast</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#expiring-use-forecast-documentation">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="DataManipulation.html" class="reference internal ">DataManipulation Module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="DataVisualization.html" class="reference internal ">DataVisualization Module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Expiry use Database Update</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#general-notes" class="reference internal">General Notes</a></li>
+                
+                  <li class="toctree-l2"><a href="#stat-taking-8-12-25" class="reference internal">Stat taking (8/12/25)</a></li>
+                
+                  <li class="toctree-l2"><a href="#post-roberta-meeting-sub-sectioning-8-11-25" class="reference internal">Post-Roberta Meeting Sub-sectioning (8/11/25)</a></li>
+                
+                  <li class="toctree-l2"><a href="#additional-sub-sectioning-8-8-25" class="reference internal">Additional Sub-sectioning (8/8/25)</a></li>
+                
+                  <li class="toctree-l2"><a href="#post-jim-meeting-8-4-25" class="reference internal">Post Jim Meeting (8/4/25)</a></li>
+                
+                  <li class="toctree-l2"><a href="#meeting-with-jim-7-30-25" class="reference internal">Meeting with Jim (7/30/25)</a></li>
+                
+                  <li class="toctree-l2"><a href="#pattern-matching-7-28-25" class="reference internal">Pattern matching (7/28/25)</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Expiry use Database Update</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="DataVisualization.html"
+       title="previous chapter">← DataVisualization Module</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="expiry-use-database-update">
+<h1>Expiry use Database Update<a class="headerlink" href="#expiry-use-database-update" title="Link to this heading">¶</a></h1>
+<p>This document was created on 7/28/2025 in a effort to document the
+process taken to update the CEDAC Expiring Use Report to a new forecast
+date of 2030.</p>
+<section id="general-notes">
+<h2>General Notes<a class="headerlink" href="#general-notes" title="Link to this heading">¶</a></h2>
+<p>This section will be used for quick notes. There is no date as it is
+constantly overwritten.</p>
+<p>17.625 % of properties are 100% section 8, and have a expiry date after
+2030. (282 total)</p>
+<p>858, or 45.61 % of all properties received some form of section 8.</p>
+<p>576 properties only have a subset of units covered under section 8.</p>
+<p>201 properties have a override date that is past the forecast date.</p>
+</section>
+<section id="stat-taking-8-12-25">
+<h2>Stat taking (8/12/25)<a class="headerlink" href="#stat-taking-8-12-25" title="Link to this heading">¶</a></h2>
+<p><strong>PRAC Stats</strong></p>
+<ul class="simple">
+<li><p>109 out of 159 PRAC properties have &lt;= 20 units (68%). 50 Properties
+have more than 20 units</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>202 Stats</strong></p>
+<ul class="simple">
+<li><p>14 out of 28 202 properties have &lt;= 20 units (50%) Leaving another 14
+with more than 20 units</p></li>
+<li><p>Average of number of units of properties that are not preserved is 72</p></li>
+<li><p>Median number of uinits of properties that are not preserved is 50</p></li>
+<li><p>They are a total of 136 preserved units</p></li>
+<li><p>Total of 1084 unpreserved units</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>TC Stats</strong></p>
+<ul class="simple">
+<li><p>Property ID 592,17934,547,358,242 All Have section 8 expiry dates
+before 2030, but are TC projects made 30 years before forecast date</p></li>
+<li><p>87 TC projects have section 8</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Active Mortgage Final Endorsement Notes</strong></p>
+<ul class="simple">
+<li><p>What should be done about partially S8 Properties on this list?</p></li>
+</ul>
+<hr class="docutils" />
+<p>Next, It would be helpful if in the 1st cut status the reason for being
+marked as preserved by me was noted. I can go back and change that. They
+are 3 reasons why a property would be marked as preserved for now.</p>
+<ol class="arabic simple">
+<li><p>100% S.8 Expiring after the forecast date</p></li>
+<li><p>&lt;= 20 unit PRAC property</p></li>
+<li><p>&lt;= 20 unit 202 property</p></li>
+</ol>
+<p>An Additional question I have is why does prop ID 237 repeat is TC year
+awarded forecast 5 times? Seems weird for the tree to do that.</p>
+</section>
+<section id="post-roberta-meeting-sub-sectioning-8-11-25">
+<h2>Post-Roberta Meeting Sub-sectioning (8/11/25)<a class="headerlink" href="#post-roberta-meeting-sub-sectioning-8-11-25" title="Link to this heading">¶</a></h2>
+<p>There is a lot of work to be done in order to look get a better look at
+all of the programs involved in the ask risk report. This includes</p>
+<ul class="simple">
+<li><p>☒ Create spreadsheet with all properties that are 100% section 8
+expiring after 2030. Mark all as PRESERVED</p></li>
+<li><p>☒ Create spreadsheet with all S8 Properties that expire <em>Before</em> 2030.</p>
+<ul>
+<li><p>If Hud Contract Program Group code is PRAC and &lt;= 20 units mark as
+PERSERVED</p></li>
+</ul>
+</li>
+<li><p>☒ Create spreadsheet with all the listings that are</p>
+<ul>
+<li><p>Expiring before 2030</p></li>
+<li><p>100% S.8</p></li>
+<li><p>PRAC</p></li>
+<li><p>In order to get a visualize what the world of PRAC properties looks
+like currently.</p></li>
+</ul>
+</li>
+<li><p>☒ Back in the S.8 Properties that are expiring before 2030
+spreadsheet, if the program type group code is 202/8 and &lt;= 20 units
+then mark as PERSERVED</p></li>
+<li><p>☒ Also a generate a spreadsheet with all 100% S.8, 202/8 propeties
+that are expiring before 2030</p></li>
+<li><p>☒ Generate spreadsheet of all TC year awarded 0 to 30 years before
+forecast date properties.</p></li>
+<li><p>☒ Generate spreadsheet for all projects where Forecast Preserved By
+Program is baseed on HUD active mortage with final endorsment date 0
+to 15 years before forecast date</p></li>
+<li><p>☒ Generate spreadsheet of all projects that have a override past the
+forecast date</p></li>
+<li><p>☒ Highlight ones that have a S.8 end date later the forecast date</p></li>
+</ul>
+<p>This is all involving the verification of projects that are not at risk.
+Come up with any useful statistics and verifications along the way. It
+was also reveled that TRACs is a form of section 8, therefore meaning
+that the HUD_TRACS_CONTRACT field is a hint that a properties receives
+section 8 assistance.</p>
+</section>
+<section id="additional-sub-sectioning-8-8-25">
+<h2>Additional Sub-sectioning (8/8/25)<a class="headerlink" href="#additional-sub-sectioning-8-8-25" title="Link to this heading">¶</a></h2>
+<p>So far, I have discovered that ~ 17.5% of properies are fully section 8
+and have contracts that expire after 2030. (About 282)</p>
+<p>I also know they are about ~220, 230 section 202 properties in MA that
+will most likely renew themselves. A good course of action would be
+extracting this exact number of 202’s and setting them aside. A descion
+must be made, If a 202 is set to expire before 2030, should it be looked
+at or can it be set aside? (Yes)</p>
+<p>After obtaining that information I should be able to see how many 202
+props are 100% section 8 to see how many are done in total</p>
+</section>
+<section id="post-jim-meeting-8-4-25">
+<h2>Post Jim Meeting (8/4/25)<a class="headerlink" href="#post-jim-meeting-8-4-25" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>☒ Roberta requested a list of all properties in the expiring use
+report that have a section 8 end date that is later than the section 8
+override date.</p></li>
+<li><p>☐ Run the “CompleteS8” script discussed in the 7/28 pattern matching
+log in on the new forecast that Jim sent over.</p></li>
+</ul>
+<p>In the aftermath of the meeting with jim, it was revealed that the
+“Check date” column that Stephan had imported was not a part of the
+decision tree code. In order to regain the columns Stephan would need to
+run that script again. However since he is on vacation it makes things a
+little more complicated for now.</p>
+</section>
+<section id="meeting-with-jim-7-30-25">
+<h2>Meeting with Jim (7/30/25)<a class="headerlink" href="#meeting-with-jim-7-30-25" title="Link to this heading">¶</a></h2>
+<p>Column T has a star where column S and (?) differ</p>
+<p>Has the TC date where it says TC awarded 340 years ago been updated to
+the currant forecast year (2030).</p>
+<ul class="simple">
+<li><p>Cut the records that different from the 2027 at risk report</p></li>
+<li><p>Sometimes properties will go through refinancing where they are some
+units lost or added.</p></li>
+<li><p>TC awarded 0 to 30 year before are all not at risk b/ by law they are
+required total more than 30 years.</p></li>
+<li><p>Anywhere where it says prac of 202 and the project is less than 20
+units, than we can assume that those properties are good.</p></li>
+<li><p>Whenever ForcastPreservedByProgram is blank, then it should be assumed
+that the units of that property are at risk,</p></li>
+<li><p>If there ais a active HUD contract, and a override present on the same
+property, the date that is the furthest away takes precedence.</p></li>
+</ul>
+<p>descion tree is written in SQL And Visual basic</p>
+<p>As of this moment meeting, I presented this information to the audience
+of Dilla, Roberta, and Jim.</p>
+<blockquote>
+<div><p>17.625 % of properties are 100% section 8, and have a expiry date
+after 2030. (282 total)</p>
+<p>858, or 45.61 % of all properties received some form of section 8.</p>
+<p>576 properties only have a subset of units covered under section 8.</p>
+<p>201 properties have a override date that is past the forecast date.</p>
+</div></blockquote>
+</section>
+<section id="pattern-matching-7-28-25">
+<h2>Pattern matching (7/28/25)<a class="headerlink" href="#pattern-matching-7-28-25" title="Link to this heading">¶</a></h2>
+<p>The first step of the updating process is to take subsets of properties
+based on a common factor in a effort to rule them out.</p>
+<p>For example, if 100% of units are under section 8, and the S8_ExpDate is
+after 2030, that property can be safely consider as not at risk and
+marked off. The code for which I checked for this is listed below. The
+follow script updated about 282 properties out of 1882. This means they
+are 1600 properties left. In other words this script eliminated17.625%
+of properties.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">openpyxl</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_workbook</span>
+
+<span class="c1"># This script is intended to take in the expiry use database forecast through 2030, and run a quick check for all properties that have</span>
+<span class="c1"># are 100% section 8 units and have a S8_ExpDate after 2030 (the forecast date). The forecast date can easily be changed in the</span>
+<span class="c1"># variable bellow</span>
+
+<span class="c1"># Change this to the appropritae forecast date</span>
+<span class="n">forecast_date</span> <span class="o">=</span> <span class="s2">&quot;12/31/2030&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;advance Preserve Through date to 2030 v3 draft.xlsx&quot;</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="s2">&quot;NA&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_section_8_expiry</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">forecast_date</span><span class="p">):</span>
+    <span class="c1"># Convert the forecast date to a datetime object</span>
+    <span class="n">forecast_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">forecast_date</span><span class="p">)</span>
+    <span class="c1"># Ensure the S8_ExpDate column is in datetime format</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_ExpDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_ExpDate&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TotalUnits&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TotalUnits&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="c1"># Filter for properties that are 100% Section 8 units and have an expiry date after the forecast date</span>
+    <span class="n">section_8_expiry</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_ExpDate&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">forecast_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TotalUnits&#39;</span><span class="p">])]</span>
+
+    <span class="c1"># Select relevant columns to return</span>
+    <span class="n">section_8_expiry</span> <span class="o">=</span> <span class="n">section_8_expiry</span><span class="p">[</span><span class="s1">&#39;PropertyID&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">section_8_expiry</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_all_s8_properties</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">s8_count</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;S8_PBAUnits&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">s8_count</span>
+
+
+<span class="n">matching_ids</span> <span class="o">=</span> <span class="n">check_section_8_expiry</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">forecast_date</span><span class="p">)</span>
+
+<span class="n">note</span> <span class="o">=</span> <span class="s1">&#39;100</span><span class="si">% o</span><span class="s1">f units are S.8, and S8 expires after forecast date&#39;</span>
+<span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;done&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PropertyID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">matching_ids</span><span class="p">),</span> <span class="s1">&#39;Jameer notes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">note</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PropertyID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">matching_ids</span><span class="p">),</span> <span class="s1">&#39;Status after 1st cut (done, small, &lt;&gt;)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
+
+
+<span class="c1"># Load the workbook and active sheet with openpyxl (preserves formatting)</span>
+<span class="n">workbook</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="s2">&quot;advance Preserve Through date to 2030 v3 draft.xlsx&quot;</span><span class="p">)</span>
+<span class="n">sheet</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">active</span>
+
+<span class="c1"># Get header row to find column indexes</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">cell</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">iter_rows</span><span class="p">(</span><span class="n">min_row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_row</span><span class="o">=</span><span class="mi">1</span><span class="p">))]</span>
+<span class="n">prop_id_idx</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;PropertyID&quot;</span><span class="p">)</span>
+<span class="n">note_idx</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Jameer notes&quot;</span><span class="p">)</span>
+<span class="n">status_idx</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Status after 1st cut (done, small, &lt;&gt;)&quot;</span><span class="p">)</span>
+
+<span class="n">matching_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># Iterate through rows and update notes/status for matching IDs</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sheet</span><span class="o">.</span><span class="n">iter_rows</span><span class="p">(</span><span class="n">min_row</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># assuming headers are in row 1</span>
+    <span class="n">property_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">prop_id_idx</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">if</span> <span class="n">property_id</span> <span class="ow">in</span> <span class="n">matching_ids</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="n">matching_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">row</span><span class="p">[</span><span class="n">note_idx</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">note</span>
+        <span class="n">row</span><span class="p">[</span><span class="n">status_idx</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">status</span>
+
+<span class="c1"># Save to a new file (original formatting preserved)</span>
+<span class="n">workbook</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;S8_Forecast_Check_Formatted.xlsx&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">matching_counter</span><span class="si">}</span><span class="s2"> properties updated in the Excel file.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Total properties with non-null S8_PBAUnits: </span><span class="si">{</span><span class="n">find_all_s8_properties</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, There is a field inside of the preservation sheet called
+“ForecastPreservedByProgram”. This column represents the reason why the
+descion tree marked a property down as Not at RIsk.</p>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="DataVisualization.html"
+       title="previous chapter">← DataVisualization Module</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Jameer Gomez-Santos.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

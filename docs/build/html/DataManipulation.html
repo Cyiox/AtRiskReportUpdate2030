@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>DataManipulation Module</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="DataVisualization Module" href="DataVisualization.html" />
+  <link rel="prev" title="2030 Expiring Use Forecast documentation" href="index.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">2030 Expiring Use Forecast</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#expiring-use-forecast-documentation">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">DataManipulation Module</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#module-DataManipulation" class="reference internal">DataManipulation Module</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="DataVisualization.html" class="reference internal ">DataVisualization Module</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="ExpiringUseGuide.html" class="reference internal ">Expiry use Database Update</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>DataManipulation Module</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← 2030 Expiring Use Forecast documentation</a>
+  </li>
+  <li class="next">
+    <a href="DataVisualization.html"
+       title="next chapter">DataVisualization Module →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="module-DataManipulation">
+<span id="datamanipulation-module"></span><h1>DataManipulation Module<a class="headerlink" href="#module-DataManipulation" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.Preserve_Via_Units">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">Preserve_Via_Units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numOfUnits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statusColumnName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.Preserve_Via_Units" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a Dataframe of all the properties in a dataframe under a given amount of units, then sets status column to PRESERVED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing properties including a ‘TotalUnits’ column.</p></li>
+<li><p><strong>numOfUnits</strong> (<em>int</em>) – Property must have less than or equal to this number to be preserved.</p></li>
+<li><p><strong>statusColumnName</strong> (<em>str</em>) – Name of the column used to track the status of the property.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns a DataFrame of all properties with less than or equal to the given number of units, with the status column set to PRESERVED.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.S8_Expiring_Post_Forecast">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">S8_Expiring_Post_Forecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.S8_Expiring_Post_Forecast" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a Dataframe of all properties from the inputed dataframe that consist of 100% S8 units and have an S8 expiry date after the forcast date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe all the forecast data. Must have the columns ‘S8_ExpDate’, ‘S8_PBAUnits’, and ‘TotalUnits’.</p></li>
+<li><p><strong>forecast_date</strong> (<em>str</em>) – The cutoff date for the forecast in MM/DD/YYYY format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of input Dataframe containing properties with 100% Section 8 units and an S8 expiry date after the forecast date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.S8_Expiring_Pre_Forecast">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">S8_Expiring_Pre_Forecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.S8_Expiring_Pre_Forecast" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a Dataframe of all properties from the inputed dataframe that consist of 100% S8 units and have an S8 expiry date after the forcast date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe all the forecast data. Must have the columns ‘S8_ExpDate’, ‘S8_PBAUnits’, and ‘TotalUnits’.</p></li>
+<li><p><strong>forecast_date</strong> (<em>str</em>) – The cutoff date for the forecast in MM/DD/YYYY format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of input Dataframe containing properties with 100% Section 8 units and an S8 expiry date after the forecast date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.S8_expDate_vs_overrideDate">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">S8_expDate_vs_overrideDate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">S8Propertys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overridenProperties</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.S8_expDate_vs_overrideDate" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a DataFrame of properties where the Section 8 expiration date is later than the override date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S8Propertys</strong> (<em>DataFrame</em>) – DataFrame with at least ‘PropertyID’ and ‘S8_ExpDate’ columns.</p></li>
+<li><p><strong>overridenProperties</strong> (<em>DataFrame</em>) – DataFrame with ‘PropertyID’ and ‘OverrideDate’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of merged DataFrame where S8_ExpDate &gt; OverrideDate.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.create_pie_chart">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">create_pie_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topN</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.create_pie_chart" title="Link to this definition">¶</a></dt>
+<dd><p>Plots a pie chart of the top N most frequent values in a column.
+If top_n is not specified, all values are shown with no ‘Other’ grouping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Input DataFrame.</p></li>
+<li><p><strong>columnName</strong> (<em>str</em>) – Name of the column to analyze.</p></li>
+<li><p><strong>top_n</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of top values to display. If None, show all.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.extract_Column_With_IDs">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">extract_Column_With_IDs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.extract_Column_With_IDs" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts single given column along with another column containing its ‘PropertyID’ from a DataFrame object. Assumes existance of “PropertyID” column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – DataFrame to extract a coulmn from.</p></li>
+<li><p><strong>columnName</strong> (<em>str</em>) – Exact name of the coulumn to extract.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Returns a ValueError if the coulumn is not found in the DataFrane.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A singlar column of the dataframe.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.extract_propertyIDs">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">extract_propertyIDs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.extract_propertyIDs" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts unique PropertyIDs from the DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>DataFrame</em>) – The input DataFrame containing property data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Series of unique PropertyIDs. A series is an individual column of a Dataframe.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.find_all_overrides">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">find_all_overrides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.find_all_overrides" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a DataFrame of all properties with an override date.
+If a forecast_date is provided, only properties with override dates after that date are included.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Input DataFrame containing property data.</p></li>
+<li><p><strong>forecast_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional cutoff date (MM/DD/YYYY) for filtering override dates.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of DataFrame with ‘PropertyID’ and ‘OverrideDate’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.get_All_By_Forecast">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">get_All_By_Forecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecastFilter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numOfUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.get_All_By_Forecast" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a DataFrame of all properties based on a matching a string with the ‘ForecastPreservedByProgram’ column, that expire before the forecast date, optionally filtered by number of units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing the atRisk forecast data.</p></li>
+<li><p><strong>forecastFilter</strong> (<em>str</em>) – Filter to apply to the ‘ForecastPreservedByProgram’, Filteed based on if that string is contained in the row of that column.</p></li>
+<li><p><strong>forecast_date</strong> (<em>str</em>) – Forecast date of at risk forecast in MM/DD/YYYY format.</p></li>
+<li><p><strong>numOfUnits</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Optional parameter to that will only return PRAC properties with a number of units greater or equal to this number when provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing all PRAC properties that expire before the forecast date. Optionally filtered by being greater than number of units.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.get_Expired_S8">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">get_Expired_S8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.get_Expired_S8" title="Link to this definition">¶</a></dt>
+<dd><p>Returns full rows of all properties where the S8_ExpDate is earlier than the forecast date (i.e., already expired).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – The input DataFrame containing property data.</p></li>
+<li><p><strong>forecast_date</strong> (<em>str</em>) – The forecast cutoff date in MM/DD/YYYY format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of original DataFrame with all columns, for expired S8 properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.get_all_PRAC">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">get_all_PRAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numOfUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.get_all_PRAC" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a DataFrame of all PRAC properties that expire before the forecast date, optionally filtered being greater than a number of units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing the atRisk forecast data.</p></li>
+<li><p><strong>numOfUnits</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Optional parameter to that will only return PRAC properties with a number of units greater or equal to this number when provided.</p></li>
+<li><p><strong>forecast_date</strong> (<em>str</em>) – Forecast date of at risk forecast in MM/DD/YYYY format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing all PRAC properties that expire before the forecast date. Optionally filtered by being greater than number of units.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.get_all_s8_properties">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">get_all_s8_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.get_all_s8_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a DataFrame of all properties that have at least one S8_PBAUnit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>DataFrame</em>) – The input DataFrame containing property data, including the ‘S8_PBAUnits’ column.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of the input DataFrame where S8_PBAUnits is not null and greater than 0.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.get_larger_date">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">get_larger_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.get_larger_date" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the later of two dates in MM/DD/YYYY format.
+If both dates are invalid or missing, returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="DataManipulation.plot_date_cutoff_bar">
+<span class="sig-prename descclassname"><span class="pre">DataManipulation.</span></span><span class="sig-name descname"><span class="pre">plot_date_cutoff_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Date</span> <span class="pre">Distribution'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataManipulation.plot_date_cutoff_bar" title="Link to this definition">¶</a></dt>
+<dd><p>Plots a bar chart showing how many entries in a date column are:
+- Before a cutoff date
+- After a cutoff date
+- Missing (null)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Input DataFrame.</p></li>
+<li><p><strong>date_column</strong> (<em>str</em>) – Name of the column containing dates.</p></li>
+<li><p><strong>cutoff_date</strong> (<em>str</em>) – The cutoff date in ‘MM/DD/YYYY’ or ISO format.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title of the chart.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← 2030 Expiring Use Forecast documentation</a>
+  </li>
+  <li class="next">
+    <a href="DataVisualization.html"
+       title="next chapter">DataVisualization Module →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Jameer Gomez-Santos.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
