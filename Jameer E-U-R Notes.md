@@ -18,9 +18,35 @@ This section will be used for quick notes. There is no date as it is constantly 
 
 
 
+
+
+
+
+## Data Syncing (8/18/25) - (8/19/25)
+
+Due to having many different sheets full of sub querys, when a sub query is updated it needs to be reflect back on the main sheet. That being said, they are cases when the same property is represented in many sub querys, how should that be synced?
+
+The solution I have implemented in a *Bi-Directional Sync* It works by:
+
+When a user initiates a sync, the Jameer notes, Roberta notes, and 1st cut status column are all copied into the **Main Forecast** sheet. However, if two subqueries contain the same property but with differing notes, the notes will be combined and placed into the corresponding notes section in the main forecast. 
+
+For example 
+
+| All TC Properties  | All Overrides            | Main Forecast After Sync                  |
+| ------------------ | ------------------------ | ----------------------------------------- |
+| "Look at registry" | "Registry book ___ says" | Look at registry \| Registry book __ says |
+| "Refi in 2024"     |                          | Refi in 2024                              |
+|                    | Owned by non-profit      | Owned by non-profit                       |
+
+After the main forecast has been synced, the newly synced notes from the main forecast are copied back into the subqueries in order to keep everything the same. 
+
+The code for this process can be found in **BiDirectionalSync.py**
+
+> Currently this process can only be done with the execution of a python script. In the future, Roberta will like a to initiate the syncing process herself. This can via a application exe, but the details of which will need to be discussed further in order to comply with CEDAC security protocol.
+
 ## Stat taking (8/12/25)
 
-___
+
 
 **PRAC Stats**
 
