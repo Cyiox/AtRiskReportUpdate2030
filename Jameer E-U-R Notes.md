@@ -61,6 +61,7 @@ The code for this process can be found in **BiDirectionalSync.py**
 
 
 
+
 **PRAC Stats**
 
 - 109 out of 159 PRAC properties have <= 20 units (68%). 50 Properties have more than 20 units
