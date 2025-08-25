@@ -13,27 +13,7 @@ import matplotlib.pyplot as plt
 
 
 
-def S8_Expiring_Pre_Forecast(df: DataFrame, forecast_date: str) -> DataFrame:
-    '''Returns a Dataframe of all properties from the inputed dataframe that consist of 100% S8 units and have an S8 expiry date after the forcast date.
-
-    Args:
-        df (DataFrame): Dataframe all the forecast data. Must have the columns 'S8_ExpDate', 'S8_PBAUnits', and 'TotalUnits'.
-        forecast_date (str): The cutoff date for the forecast in MM/DD/YYYY format.
-
-    Returns:
-        DataFrame: Subset of input Dataframe containing properties with 100% Section 8 units and an S8 expiry date after the forecast date.
-    '''
-    # Convert the forecast date to a datetime object
-    cutOff_DT:Timestamp = pd.to_datetime(forecast_date)
-    # Ensure the S8_ExpDate column is in datetime format
-    df['S8_ExpDate'] = pd.to_datetime(df['S8_ExpDate'], errors='coerce')
-    df['TotalUnits'] = pd.to_numeric(df['TotalUnits'], errors='coerce').fillna(0).astype(int)
-    df['S8_PBAUnits'] = pd.to_numeric(df['S8_PBAUnits'], errors='coerce')
-    # Filter for properties that are 100% Section 8 units and have an expiry date after the forecast date
-    section_8_expiry:DataFrame = df[(df['S8_ExpDate'] > cutOff_DT) & (df['S8_PBAUnits'] == df['TotalUnits'])]
-    return section_8_expiry
-
-def S8_Expiring_Post_Forecast(df: DataFrame, forecast_date: str) -> DataFrame:
+def get_Complete_S8_Expiring_Pre_Forecast(df: DataFrame, forecast_date: str) -> DataFrame:
     '''Returns a Dataframe of all properties from the inputed dataframe that consist of 100% S8 units and have an S8 expiry date after the forcast date.
 
     Args:
@@ -53,6 +33,26 @@ def S8_Expiring_Post_Forecast(df: DataFrame, forecast_date: str) -> DataFrame:
     section_8_expiry:DataFrame = df[(df['S8_ExpDate'] < cutOff_DT) & (df['S8_PBAUnits'] == df['TotalUnits'])]
     return section_8_expiry
 
+def get_Complete_S8_Expiring_Post_Forecast(df: DataFrame, forecast_date: str) -> DataFrame:
+    '''Returns a Dataframe of all properties from the inputed dataframe that consist of 100% S8 units and have an S8 expiry date after the forcast date.
+
+    Args:
+        df (DataFrame): Dataframe all the forecast data. Must have the columns 'S8_ExpDate', 'S8_PBAUnits', and 'TotalUnits'.
+        forecast_date (str): The cutoff date for the forecast in MM/DD/YYYY format.
+
+    Returns:
+        DataFrame: Subset of input Dataframe containing properties with 100% Section 8 units and an S8 expiry date after the forecast date.
+    '''
+    # Convert the forecast date to a datetime object
+    cutOff_DT:Timestamp = pd.to_datetime(forecast_date)
+    # Ensure the S8_ExpDate column is in datetime format
+    df['S8_ExpDate'] = pd.to_datetime(df['S8_ExpDate'], errors='coerce')
+    df['TotalUnits'] = pd.to_numeric(df['TotalUnits'], errors='coerce').fillna(0).astype(int)
+    df['S8_PBAUnits'] = pd.to_numeric(df['S8_PBAUnits'], errors='coerce')
+    # Filter for properties that are 100% Section 8 units and have an expiry date after the forecast date
+    section_8_expiry:DataFrame = df[(df['S8_ExpDate'] > cutOff_DT) & (df['S8_PBAUnits'] == df['TotalUnits'])]
+    return section_8_expiry
+
 def get_all_s8_properties(df: DataFrame) -> DataFrame:
     """
     Returns a DataFrame of all properties that have at least one S8_PBAUnit.
@@ -66,6 +66,38 @@ def get_all_s8_properties(df: DataFrame) -> DataFrame:
     df['S8_PBAUnits'] = pd.to_numeric(df['S8_PBAUnits'], errors='coerce')
     s8_properties = df[df['S8_PBAUnits'].notna() & (df['S8_PBAUnits'] > 0)]
     return s8_properties
+
+def get_All_S8_Properties_Pre_Forecast_Date(df: DataFrame, forecastDate: str) -> DataFrame:
+    """
+    Returns a DataFrame of all properties that have at least one S8_PBAUnit before the forecast date.
+
+    Args:
+        df (DataFrame): The input DataFrame containing property data, including the 'S8_PBAUnits' column.
+
+    Returns:
+        DataFrame: Subset of the input DataFrame where S8_PBAUnits is not null and greater than 0.
+    """
+    df['S8_PBAUnits'] = pd.to_numeric(df['S8_PBAUnits'], errors='coerce')
+    s8_properties = df[df['S8_PBAUnits'].notna() & (df['S8_PBAUnits'] > 0)]
+    section8PreForecast:DataFrame = df[(df['S8_ExpDate'] < forecastDate)]
+
+    return section8PreForecast
+
+def get_All_S8_Properties_Post_Forecast_Date(df: DataFrame, forecastDate: str) -> DataFrame:
+    """
+    Returns a DataFrame of all properties that have at least one S8_PBAUnit after the forecast date.
+
+    Args:
+        df (DataFrame): The input DataFrame containing property data, including the 'S8_PBAUnits' column.
+
+    Returns:
+        DataFrame: Subset of the input DataFrame where S8_PBAUnits is not null and greater than 0.
+    """
+    df['S8_PBAUnits'] = pd.to_numeric(df['S8_PBAUnits'], errors='coerce')
+    s8_properties = df[df['S8_PBAUnits'].notna() & (df['S8_PBAUnits'] > 0)]
+    section8PostForecast:DataFrame = df[(df['S8_ExpDate'] > forecastDate)]
+
+    return section8PostForecast
 
 def find_all_overrides(df: DataFrame, forecast_date: Optional[str] = None) -> DataFrame:
     """
@@ -205,9 +237,27 @@ def get_all_PRAC(df: DataFrame, forecast_date: str, numOfUnits: Optional[int] = 
     else:
         return PRACRiskS8
 
+def get_all_By_Forecast(df: DataFrame, forecast_date: str, forecastFilter: str, numOfUnits: Optional[int] = None) -> DataFrame:
+    '''TODO
 
-def get_All_By_Forecast(df: DataFrame, forecast_date: str, forecastFilter: str, numOfUnits: Optional[int] = None) -> DataFrame:
-    """Returns a DataFrame of all properties based on a matching a string with the 'ForecastPreservedByProgram' column, that expire before the forecast date, optionally filtered by number of units.
+    Args:
+        df (DataFrame): _description_
+        forecast_date (str): _description_
+        forecastFilter (str): _description_
+        numOfUnits (Optional[int], optional): _description_. Defaults to None.
+
+    Returns:
+        DataFrame: _description_
+    '''
+    filteredDF = df[df['ForecastPreservedByProgram'].str.contains(forecastFilter, na=False, case=False)]
+    if numOfUnits is not None:
+        filteredByUnitsDF = filteredDF[filteredDF['TotalUnits'] >= numOfUnits]
+        return filteredByUnitsDF
+    else:
+        return filteredDF
+
+def get_All_By_Tree_Post_Forecast_Date(df: DataFrame, forecast_date: str, forecastFilter: str, numOfUnits: Optional[int] = None) -> DataFrame:
+    """Returns a DataFrame of all properties that have section 8 after the forecast date based on a matching a string with the 'ForecastPreservedByProgram' column, that expire before the forecast date, optionally filtered by number of units.
 
     Args:
         df (DataFrame): Dataframe containing the atRisk forecast data.
@@ -219,13 +269,48 @@ def get_All_By_Forecast(df: DataFrame, forecast_date: str, forecastFilter: str, 
         DataFrame: A DataFrame containing all PRAC properties that expire before the forecast date. Optionally filtered by being greater than number of units.
     """    
     # Getting all S8 Properties 
-    RiskS8 = S8_Expiring_Post_Forecast(df,forecast_date= forecast_date)
+    RiskS8 = get_All_S8_Properties_Post_Forecast_Date(df,forecast_date)
     PRACRiskS8 = RiskS8[RiskS8['ForecastPreservedByProgram'].str.contains(forecastFilter, na=False, case=False)]
     if numOfUnits is not None:
         PRACRiskS8 = PRACRiskS8[PRACRiskS8['TotalUnits'] >= numOfUnits]
         return PRACRiskS8
     else:
         return PRACRiskS8
+    
+def get_All_By_Tree_Pre_Forecast_Date(df: DataFrame, forecast_date: str, forecastFilter: str, numOfUnits: Optional[int] = None) -> DataFrame:
+    """Returns a DataFrame of all properties that have section 8 before the forecast date based on a matching a string with the 'ForecastPreservedByProgram' column, that expire before the forecast date, optionally filtered by number of units.
+
+    Args:
+        df (DataFrame): Dataframe containing the atRisk forecast data.
+        forecastFilter (str): Filter to apply to the 'ForecastPreservedByProgram', Filteed based on if that string is contained in the row of that column.
+        forecast_date (str): Forecast date of at risk forecast in MM/DD/YYYY format.
+        numOfUnits (Optional[int]): Optional parameter to that will only return PRAC properties with a number of units greater or equal to this number when provided.
+
+    Returns:
+        DataFrame: A DataFrame containing all PRAC properties that expire before the forecast date. Optionally filtered by being greater than number of units.
+    """    
+    # Getting all S8 Properties 
+    RiskS8 = get_All_S8_Properties_Pre_Forecast_Date(df,forecast_date)
+    FilteredDF = RiskS8[RiskS8['ForecastPreservedByProgram'].str.contains(forecastFilter, na=False, case=False)]
+    if numOfUnits is not None:
+        FilteredByUnitsDF = FilteredDF[FilteredDF['TotalUnits'] >= numOfUnits]
+        return FilteredByUnitsDF
+    else:
+        return FilteredDF
+    
+def get_Validated_By_ACT_And_Half_S8(df: DataFrame) -> None:
+    actCodesDF = get_All_By_Tree_Post_Forecast_Date(
+        df=df,
+        forecast_date="12/31/2030",
+        forecastFilter="act code",
+    )
+
+    YHNDF = get_all_By_Forecast(actCodesDF, forecast_date="12/31/2030", forecastFilter="YHN")
+    YHEDF = get_all_By_Forecast(actCodesDF, forecast_date="12/31/2030", forecastFilter="YHE")
+    
+    validCodes = pd.concat([YHNDF, YHEDF], ignore_index=True)
+    validCodes.to_excel("All valid ACT codes.xlsx", index=False)
+
     
 def Preserve_Via_Units(df: DataFrame, numOfUnits: int, statusColumnName: str) -> DataFrame:
     '''Returns a Dataframe of all the properties in a dataframe under a given amount of units, then sets status column to PRESERVED.
@@ -328,29 +413,24 @@ def plot_date_cutoff_bar(
     
 if __name__ == "__main__":
     print("Script Started")
-    df: DataFrame = pd.read_excel("2030 Forecast E-U-R Draft -Master.xlsx", na_values=["", " ", "  ", "NA", "N/A", "null"])
-    df.columns = df.columns.str.strip()
-    print("Dataframe Loaded.")
+    
+    AllTC = pd.read_excel("2030 Forecast E-U-R Draft -Master.xlsx", sheet_name="All TC Properties", na_values=["", " ", "  ", "NA", "N/A", "null"])
+    AllFinalDates = pd.read_excel("2030 Forecast E-U-R Draft -Master.xlsx", sheet_name="All Active Mortgage Properties", na_values=["", " ", "  ", "NA", "N/A", "null"])
 
-    overriden = find_all_overrides(df)
-    print("Saving All292 to Excel sheet...")
-    print("Saved successfully!")
-    print(overriden)
+    # Get only the PropertyIDs that exist in both DataFrames
+    shared_ids = set(AllTC["PropertyID"]).intersection(AllFinalDates["PropertyID"])
 
-    newDf = pd.read_excel("2030 Forecast E-U-R Draft -Master.xlsx", sheet_name="All Active Mortage Properties")
-    plot_date_cutoff_bar(
-        df=newDf,
-        date_column="S8_ExpDate",
-        cutoff_date=forecast_date,
-        title="S.8 Expiration Distribution"
-    )
+    # Filter one of the DataFrames using those IDs
+    compliant = AllTC[AllTC["PropertyID"].isin(shared_ids)].copy()
+
+    # Save to Excel
+    compliant.to_excel("TC and Mortgage Properties.xlsx", index=False)
+
+    
 
 
 
-
-
-
-
+ 
 
 
 
