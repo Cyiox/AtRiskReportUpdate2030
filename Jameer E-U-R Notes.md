@@ -22,6 +22,25 @@ This section will be used for quick notes. There is no date as it is constantly 
 
 
 
+## Roberta 
+
+
+
+
+
+## Pulling additional fields (8/20/25)
+
+In order to make significant further progress in sectioning off a significant portion of projects, I have to pull additional information out of the database than what is available in the forecast report currently. These fields are  
+
+| MF_Assistance_and_Sec8_Contracts_archive                     | Properties                                                   | DHCD_archive             |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------ |
+| tracs_effective_date                                         | ProjectID_lending                                            | CBH Awarded              |
+| - Will need owner_email_text from the MF_Properties_with_Assistance_and_Sec8_Contracts_archive | Comment: Preservation Status, Type or other new Affordability Te | FCF Awarded (Both types) |
+|                                                              | Mortgage status/ TC and other restrictions                   | HIF Awarded              |
+|                                                              | Project/AKA                                                  | Date <Loan name> Closed  |
+
+Also will require pulling the ExpUse Property ID field from all of the tables above in order to data match.
+
 ## Data Syncing (8/18/25) - (8/19/25)
 
 Due to having many different sheets full of sub querys, when a sub query is updated it needs to be reflect back on the main sheet. That being said, they are cases when the same property is represented in many sub querys, how should that be synced?
