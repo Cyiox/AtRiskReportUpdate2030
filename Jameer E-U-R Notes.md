@@ -22,13 +22,7 @@ This section will be used for quick notes. There is no date as it is constantly 
 
 
 
-## Roberta 
-
-
-
-
-
-## Pulling additional fields (8/20/25)
+## Pulling additonal fields (8/20/25)
 
 In order to make significant further progress in sectioning off a significant portion of projects, I have to pull additional information out of the database than what is available in the forecast report currently. These fields are  
 
@@ -64,6 +58,7 @@ The code for this process can be found in **BiDirectionalSync.py**
 > Currently this process can only be done with the execution of a python script. In the future, Roberta will like a to initiate the syncing process herself. This can via a application exe, but the details of which will need to be discussed further in order to comply with CEDAC security protocol.
 
 ## Stat taking (8/12/25)
+
 
 
 

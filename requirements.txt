@@ -1,0 +1,23 @@
+# Load forecast sheets
+    forecast_sheets = pd.read_excel("2030 Forecast E-U-R Draft -Local.xlsx", sheet_name=None)
+
+    # Extract the "Main Forecast" sheet
+    main_forecast = forecast_sheets.get("Main Forecast")
+    if main_forecast is None:
+        raise ValueError("Main Forecast sheet not found.")
+
+    # Standardize column name
+    if "ExpUsePropertyID" in main_forecast.columns and "PropertyID" not in main_forecast.columns:
+        main_forecast = main_forecast.rename(columns={"ExpUsePropertyID": "PropertyID"})
+
+    # Make sure PropertyID is string in both DataFrames
+    main_forecast["PropertyID"] = main_forecast["PropertyID"].astype(str)
+    base_df["PropertyID"] = base_df["PropertyID"].astype(str)
+
+    # Merge base_df into main_forecast
+    merged_df = main_forecast.merge(base_df, on="PropertyID", how="left")
+
+    # Save the merged result
+    merged_df.to_excel("MainMerge.xlsx", index=False)
+
+    print(f"✅ Final merged forecast saved. Shape: {merged_df.shape}")
