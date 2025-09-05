@@ -91,6 +91,7 @@ def apply_formatting_from_old_workbook(old_path, new_path):
     print("Styles Changed")
 
 if __name__ == "__main__":
+    
 
     apply_formatting_from_old_workbook("2030 Forecast E-U-R Draft -Local.xlsx", "MergedForecast.xlsx")
 

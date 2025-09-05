@@ -22,7 +22,28 @@ This section will be used for quick notes. There is no date as it is constantly 
 
 
 
-## Pulling additonal fields (8/20/25)
+
+
+## Data Cleaning (8/26/25)
+
+Currently, Everything is a bit everywhere with the EUR. To remedy this problem, I will being doing a little spring cleaning
+
+- Gathered all S.8 -1 units properties. 
+
+- Commented the preservation reason behind every preservation descion.
+
+- Cleaned up the data view so it is more readable. 
+
+- Gathered a few statistics.
+
+- Finished commenting all PRACs
+
+**What's Next**
+
+- [ ] Finish up gathering that critera for Roberta
+- [ ] Roberta wants me to do registry research for properties that are unconclusive on the descion tree.
+
+## Pulling additional fields (8/20/25)
 
 In order to make significant further progress in sectioning off a significant portion of projects, I have to pull additional information out of the database than what is available in the forecast report currently. These fields are  
 

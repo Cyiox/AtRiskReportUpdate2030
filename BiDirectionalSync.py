@@ -126,6 +126,8 @@ if __name__ == "__main__":
     #df.columns = df.columns.str.strip()
 
     print("Dataframe Loaded.")
+    
+    update_subsheet_from_main = 
     sync_columns_bidirectional(
         excel_path="2030 Forecast E-U-R Draft -Master.xlsx",
         id_column="PropertyID",
